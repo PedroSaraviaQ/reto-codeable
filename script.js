@@ -18,9 +18,15 @@ function crearNota(e) {
     const botonBorrar = document.createElement("button");
     botonBorrar.className = "borrar";
     botonBorrar.textContent = "Borrar";
+    botonBorrar.addEventListener("click", eliminarNota);
 
     nuevaNota.appendChild(paragrafoNota);
     nuevaNota.appendChild(botonBorrar);
 
     contenedorNotas.appendChild(nuevaNota);
+}
+
+function eliminarNota(e) {
+    const nota = e.target.parentElement;
+    contenedorNotas.removeChild(nota);
 }
