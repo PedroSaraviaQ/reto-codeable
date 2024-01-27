@@ -63,7 +63,7 @@ form button:active {
 }
 
 /** Flex y Column puede ser una clase porque se repite */
-.contenedor {
+#contenedor {
     display: flex;
     flex-direction: column;
     gap: 16px;
