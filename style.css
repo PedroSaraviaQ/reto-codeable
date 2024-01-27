@@ -51,7 +51,7 @@ form button {
     font-weight: bold;
     color: #FFF;
     border: none;
-    transition: background-color 0.3s;
+    transition: background 0.3s;
 }
 
 form button:hover {
@@ -60,4 +60,48 @@ form button:hover {
 
 form button:active {
     background: #333;
+}
+
+/** Flex y Column puede ser una clase porque se repite */
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.nota {
+    /** Estos estilos son copiados del textarea */
+    padding: 16px;
+    border: 2px solid #4F4F4F;
+    border-radius: 16px;
+    font-family: inherit;
+    font-size: 24px;
+    /** Estos son nuevos */
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.borrar {
+    /** Este boton comparte propiedades similares del formulario */
+    width: 83px;
+    height: 30px;
+    border: none;
+    border-radius: 16px;
+    background: #E0E0E0;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4F4F4F;
+    align-self: flex-end;
+    transition: background 0.3s;
+}
+
+.borrar:hover {
+    background: #CCC;
+}
+
+.borrar:active {
+    background: #B3B3B3;
 }
