@@ -1,25 +1,37 @@
-<!--* Agregar/activar el formateador -->
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
+
 <body>
-    <h1>Mis Notas</h1>
+    <main>
+        <h1>Mis Notas</h1>
 
-    <!--* Recuerda formalizar los atributos del formulario -->
-    <form action="">
-        <textarea name="" id="" cols="30" rows="10" placeholder="Algo para recordar..."></textarea>
-        <button>Crear</button>
-    </form>
+        <!--* Recuerda formalizar los atributos del formulario -->
+        <form action="">
+            <textarea name="" id="" cols="30" rows="10" placeholder="Algo para recordar..."></textarea>
+            <button>Crear</button>
+        </form>
 
-    <div class="contenedor"></div>
+        <div class="contenedor">
+            <div class="nota">
+                <p>Mi primera nota</p>
+                <button class="borrar">Borrar</button>
+            </div>
+            <div class="nota">
+                <p>Esta es una nota larga que ocupa más de una línea</p>
+                <button class="borrar">Borrar</button>
+            </div>
+        </div>
+    </main>
 </body>
+
 </html>

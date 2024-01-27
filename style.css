@@ -1,5 +1,63 @@
-body{
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
     background: #F2F2F2;
-    color: #333;
     font-family: "Roboto";
+    color: #333;
+}
+
+main {
+    margin: 32px auto;
+    padding: 0 16px;
+    width: 375px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+form textarea {
+    height: 120px;
+    padding: 16px;
+    border: 2px solid #4F4F4F;
+    border-radius: 16px;
+    font-family: inherit;
+    font-size: 24px;
+}
+
+form ::placeholder {
+    color: #BDBDBD;
+}
+
+form button {
+    height: 45px;
+    border-radius: 16px;
+    background: #4F4F4F;
+    font-size: 24px;
+    font-family: inherit;
+    font-weight: bold;
+    color: #FFF;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background: #666;
+}
+
+form button:active {
+    background: #333;
 }
