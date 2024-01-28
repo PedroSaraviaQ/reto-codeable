@@ -18,13 +18,13 @@ function createNoteElement(text) {
 
     //* Create DOM elements for the new note
     const newNote = document.createElement("div");
-    newNote.className = "note";
+    newNote.classList.add("note", "saved_note", "column");
 
     const noteTextParagraph = document.createElement("p");
     noteTextParagraph.textContent = text;
 
     const deleteNoteButton = document.createElement("button");
-    deleteNoteButton.className = "delete";
+    deleteNoteButton.classList.add("btn", "delete");
     deleteNoteButton.textContent = "Borrar";
     deleteNoteButton.addEventListener("click", deleteNote);
 

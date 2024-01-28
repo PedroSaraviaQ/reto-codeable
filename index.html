@@ -12,16 +12,16 @@
 </head>
 
 <body>
-    <main>
+    <main class="column">
         <h1>Mis Notas</h1>
 
         <!--* Recuerda formalizar los atributos del formulario -->
-        <form action="">
-            <textarea name="" id="" cols="30" rows="10" placeholder="Algo para recordar..."></textarea>
-            <button id="crear" onclick="notaOnClick(event)">Crear</button>
+        <form action="" class="column">
+            <textarea class="note" placeholder="Algo para recordar..."></textarea>
+            <button class="btn" onclick="createNote(event)">Crear</button>
         </form>
 
-        <div id="contenedor"></div>
+        <div id="container" class="column"></div>
     </main>
 
     <script src="script.js"></script>

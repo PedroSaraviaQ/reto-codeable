@@ -6,7 +6,7 @@
 
 body {
     background: #F2F2F2;
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     color: #333;
 }
 
@@ -14,9 +14,12 @@ main {
     margin: 32px auto;
     padding: 0 16px;
     width: 375px;
+    gap: 16px;
+}
+
+.column {
     display: flex;
     flex-direction: column;
-    gap: 16px;
 }
 
 h1 {
@@ -24,13 +27,15 @@ h1 {
 }
 
 form {
-    display: flex;
-    flex-direction: column;
     gap: 8px;
 }
 
-form textarea {
+/** Note input */
+textarea {
     height: 120px;
+}
+
+.note {
     padding: 16px;
     border: 2px solid #4F4F4F;
     border-radius: 16px;
@@ -38,20 +43,25 @@ form textarea {
     font-size: 24px;
 }
 
-form ::placeholder {
+textarea::placeholder {
     color: #BDBDBD;
 }
 
+/** Create button */
 form button {
     height: 45px;
-    border-radius: 16px;
     background: #4F4F4F;
     font-size: 24px;
+    color: #FFF;
+}
+
+.btn {
+    border: none;
+    border-radius: 16px;
     font-family: inherit;
     font-weight: bold;
-    color: #FFF;
-    border: none;
     transition: background 0.3s;
+    cursor: pointer;
 }
 
 form button:hover {
@@ -62,46 +72,29 @@ form button:active {
     background: #333;
 }
 
-/** Flex y Column puede ser una clase porque se repite */
-#contenedor {
-    display: flex;
-    flex-direction: column;
+/** Note container */
+#container {
     gap: 16px;
 }
 
-.nota {
-    /** Estos estilos son copiados del textarea */
-    padding: 16px;
-    border: 2px solid #4F4F4F;
-    border-radius: 16px;
-    font-family: inherit;
-    font-size: 24px;
-    /** Estos son nuevos */
+.saved_note {
     background: #FFF;
-    display: flex;
-    flex-direction: column;
     gap: 13px;
 }
 
-.borrar {
-    /** Este boton comparte propiedades similares del formulario */
+.delete {
     width: 83px;
     height: 30px;
-    border: none;
-    border-radius: 16px;
     background: #E0E0E0;
-    font-family: inherit;
     font-size: 18px;
-    font-weight: bold;
     color: #4F4F4F;
     align-self: flex-end;
-    transition: background 0.3s;
 }
 
-.borrar:hover {
+.delete:hover {
     background: #CCC;
 }
 
-.borrar:active {
+.delete:active {
     background: #B3B3B3;
 }
