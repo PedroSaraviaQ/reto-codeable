@@ -80,6 +80,7 @@ form button:active {
 .saved_note {
     background: #FFF;
     gap: 13px;
+    word-wrap: break-word;
 }
 
 .delete {
