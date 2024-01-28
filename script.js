@@ -1,46 +1,57 @@
-//* Crear funciones para cada tarea, tambien refactoriza
+//* Get references to DOM elements
+const noteContainer = document.getElementById("container");
+const noteInput = document.querySelector("textarea");
 
-const contenedorNotas = document.getElementById("contenedor");
-const inputNuevaNota = document.getElementsByTagName("textarea")[0];
-const botonCrearNota = document.getElementById("crear");
-
-document.addEventListener("DOMContentLoaded", () => {
-    let notasGuardadas = JSON.parse(localStorage.getItem("notas")) || [];
-    notasGuardadas.forEach(element => crearNota(element));
-})
-
-function notaOnClick(e) {
+//* Function to create a new note when the create button is clicked
+function createNote(e) {
     e.preventDefault();
-    crearNota(inputNuevaNota.value);
-    inputNuevaNota.value = "";
+    const text = noteInput.value;
+    if (text === "") return;
+
+    createNoteElement(text);
+    noteInput.value = "";
+    saveNotes();
 }
 
-function crearNota(texto) {
-    const nuevaNota = document.createElement("div");
-    nuevaNota.className = "nota";
+//* Function to create a new note element with given text
+function createNoteElement(text) {
 
-    const paragrafoNota = document.createElement("p");
-    paragrafoNota.textContent = texto;
+    //* Create DOM elements for the new note
+    const newNote = document.createElement("div");
+    newNote.className = "note";
 
-    const botonBorrar = document.createElement("button");
-    botonBorrar.className = "borrar";
-    botonBorrar.textContent = "Borrar";
-    botonBorrar.addEventListener("click", eliminarNota);
+    const noteTextParagraph = document.createElement("p");
+    noteTextParagraph.textContent = text;
 
-    nuevaNota.appendChild(paragrafoNota);
-    nuevaNota.appendChild(botonBorrar);
-    contenedorNotas.appendChild(nuevaNota);
-    guardarNotas();
+    const deleteNoteButton = document.createElement("button");
+    deleteNoteButton.className = "delete";
+    deleteNoteButton.textContent = "Borrar";
+    deleteNoteButton.addEventListener("click", deleteNote);
+
+    //* Append elements to the note container
+    newNote.appendChild(noteTextParagraph);
+    newNote.appendChild(deleteNoteButton);
+    noteContainer.appendChild(newNote);
 }
 
-function eliminarNota(e) {
-    const nota = e.target.parentElement;
-    contenedorNotas.removeChild(nota);
-    guardarNotas();
+//* Function to save notes to localStorage
+function saveNotes() {
+    let notes = [...document.querySelectorAll(".note p")].map(note => note.textContent);
+    localStorage.setItem("savedNotes", JSON.stringify(notes));
 }
 
-function guardarNotas() {
-    let notasGuardadas = [...document.querySelectorAll(".nota p")];
-    notasGuardadas = notasGuardadas.map(n => n.textContent);
-    localStorage.setItem("notas", JSON.stringify(notasGuardadas));
+//* Function to delete a node
+function deleteNote() {
+    const note = this.parentElement;
+    noteContainer.removeChild(note);
+    saveNotes();
 }
+
+//* Function to load saved notes
+function loadNotes() {
+    let savedNotes = JSON.parse(localStorage.getItem("savedNotes")) || [];
+    savedNotes.forEach(noteText => createNoteElement(noteText));
+}
+
+//* Load saved notes from localStorage when the page loads
+document.addEventListener("DOMContentLoaded", loadNotes);
