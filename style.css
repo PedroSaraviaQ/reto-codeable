@@ -13,7 +13,7 @@ body {
 main {
     margin: 32px auto;
     padding: 0 16px;
-    width: 375px;
+    max-width: 375px;
     gap: 16px;
 }
 
