@@ -2,7 +2,7 @@
 const noteContainer = document.getElementById("container");
 const noteInput = document.querySelector("textarea");
 
-//* Function to create a new note when the create button is clicked
+//& Function to create a new note when the create button is clicked
 function createNote(e) {
     e.preventDefault();
     const text = noteInput.value;
@@ -13,7 +13,7 @@ function createNote(e) {
     saveNotes();
 }
 
-//* Function to create a new note element with given text
+//& Function to create a new note element with given text
 function createNoteElement(text) {
 
     //* Create DOM elements for the new note
@@ -34,20 +34,20 @@ function createNoteElement(text) {
     noteContainer.appendChild(newNote);
 }
 
-//* Function to save notes to localStorage
+//& Function to save notes to localStorage
 function saveNotes() {
     let notes = [...document.querySelectorAll(".note p")].map(note => note.textContent);
     localStorage.setItem("savedNotes", JSON.stringify(notes));
 }
 
-//* Function to delete a node
+//& Function to delete a node
 function deleteNote() {
     const note = this.parentElement;
     noteContainer.removeChild(note);
     saveNotes();
 }
 
-//* Function to load saved notes
+//& Function to load saved notes
 function loadNotes() {
     let savedNotes = JSON.parse(localStorage.getItem("savedNotes")) || [];
     savedNotes.forEach(noteText => createNoteElement(noteText));
