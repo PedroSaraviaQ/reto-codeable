@@ -83,7 +83,7 @@ form button:active {
     word-wrap: break-word;
 }
 
-.delete {
+.note_btn {
     width: 83px;
     height: 30px;
     background: #E0E0E0;
@@ -92,10 +92,10 @@ form button:active {
     align-self: flex-end;
 }
 
-.delete:hover {
+.note_btn:hover {
     background: #CCC;
 }
 
-.delete:active {
+.note_btn:active {
     background: #B3B3B3;
 }
